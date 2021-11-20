@@ -1,0 +1,470 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  user-select: none;
+}
+
+/* Customise scroll bar */
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#scrollpath {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  animation: kaju 5s linear infinite;
+}
+
+@keyframes kaju {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  filter: blur(10px);
+}
+
+#bar:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  filter: blur(30px);
+}
+
+/* Navigation bar */
+
+.nav {
+  overflow: hidden;
+  background-color: black;
+  opacity: 0.8;
+  position: fixed;
+  width: 100%;
+}
+
+.nav:hover {
+  background-color: black;
+  opacity: 1;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: teal;
+}
+
+/* Header section */
+
+.header {
+  height: 100vh;
+  animation: animate 16s ease-in-out infinite;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@keyframes animate {
+  0%, 100% {
+    background-image: url(images/img2.jpg);
+  }
+  25% {
+    background-image: url(images/img6.jpg);
+  }
+  50% {
+    background-image: url(images/img7.jpg);
+  }
+  75% {
+    background-image: url(images/img5.jpg);
+  }
+}
+
+.topleft {
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  color: white;
+  text-shadow: 0px 0px 20px black;
+}
+
+.topleft>h1 {
+  color: turquoise;
+  font-size: 80px;
+  margin: 0%;
+}
+
+.topleft>h2 {
+  font-size: 40px;
+  margin: 0%;
+}
+
+/* About section */
+
+.div1 {
+  padding: 30px 50px;
+  color: white;
+}
+
+.div1 h1 {
+  text-decoration: underline;
+  text-shadow: 0px 0px 10px turquoise;
+  font-size: 40px;
+  text-align: center;
+}
+
+.div1 p {
+  text-align: justify;
+  line-height: 30px;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+/* Artists section */
+
+.flex-container {
+  display: flex;
+  margin: 8% 0%;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+.flex-item {
+  width: 22%;
+}
+
+.flex-item>img {
+  max-width: 90%;
+  border-radius: 50%;
+  height: 300px;
+  box-shadow: 0px 0px 20px turquoise;
+}
+
+/* Contact section */
+
+form {
+  text-align: center;
+}
+
+form>input {
+  width: 800px;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px turquoise;
+  color: black;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+}
+
+form>button {
+  width: 200px;
+  padding: 15px;
+  margin-right: 620px;
+  margin-top: 20px;
+  background-color: transparent;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px turquoise;
+}
+
+form>button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Footer section */
+
+footer {
+  padding: 2% 10%;
+  margin-top: 6%;
+  text-align: center;
+  font-size: x-large;
+  color: white;
+  border-top: 1px solid teal;
+}
+
+footer span {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+footer span:hover {
+  color: teal;
+}
+
+/* Dropdown in artist section */
+
+.drop {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  width: 80%;
+  left: 25px;
+  height: 20vh;
+  border-radius: 5px;
+  z-index: 1;
+  overflow-y: scroll;
+  backdrop-filter: blur(20px);
+  font-size: large;
+  font-weight: 200;
+  border: 1px solid teal;
+}
+
+.drop-content::-webkit-scrollbar {
+  display: none;
+}
+
+.drop:hover .drop-content {
+  display: block;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.desc>button {
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+/* Music player section */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  overflow-x: none;
+}
+
+.modal-content {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  border: 1px solid teal;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+#playButton {
+  cursor: pointer;
+}
+
+#controllers, #controllers>div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  text-shadow: 0px 0px 10px black;
+}
+
+#controllers>div {
+  flex-direction: row;
+}
+
+#controllers i {
+  margin: 0px 18px;
+  color: white;
+  cursor: pointer;
+}
+
+#controllers i:hover {
+  color: #888;
+}
+
+#controllers i:active {
+  color: rgb(124, 86, 86);
+}
+
+label {
+  cursor: pointer;
+}
+
+label:hover {
+  color: #888;
+}
+
+label:active {
+  color: red;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.beats img:nth-child(1), .beats img:nth-child(3), .beats img:nth-child(5), .beats img:nth-child(7) {
+  animation-delay: 2s;
+  width: 30px;
+}
+
+.beats img {
+  animation: beats 5s linear infinite;
+  width: 45px;
+  margin: 0% 25%;
+}
+
+@keyframes beats {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-25vh);
+    opacity: 0;
+  }
+}
+
+/* Media Queries section */
+
+@media (max-width:700px) {
+  .header {
+    height: 100vh;
+    animation: animate 16s ease-in-out infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  @keyframes animate {
+    0%, 100% {
+      background-image: url(images/head.jpg);
+    }
+    25% {
+      background-image: url(images/mar2.jpg);
+    }
+    50% {
+      background-image: url(images/concert1.jpg);
+    }
+    75% {
+      background-image: url(images/guit.png);
+    }
+  }
+  .nav a {
+    padding: 16px 12px;
+  }
+  #left {
+    display: none;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-item {
+    width: 60%;
+  }
+  .flex-item>img {
+    height: 200px;
+  }
+  form>input {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  form>button {
+    margin: 0;
+  }
+  .div1 {
+    padding: 22px 25px;
+  }
+}
